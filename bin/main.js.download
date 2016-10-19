@@ -1,0 +1,37 @@
+$(document).ready(function(){
+
+});
+
+$('.fld').focus(function(){
+
+	$(this).removeClass('parsley-error, parsley-success');
+
+});
+
+// Back button function on certain pages
+
+$('.back').click(function(){
+
+	window.history.back();
+
+});
+
+function showError(message, container) {
+
+	$(container+' div').html(message);
+	$(container).fadeIn(200).delay(3000).fadeOut(200);
+
+}
+
+$("a.confirm").click(function(e) {
+	
+	if ( confirm("Are you sure?") ) {
+		
+		var link = $(this).attr('href');
+		
+        window.location.replace( link );
+    }
+    
+    e.preventDefault();
+
+});
